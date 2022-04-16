@@ -12,13 +12,20 @@ public class MarkdownParse {
         // find the next [, then find the ], then find the (, then read link upto next )
         int currentIndex = 0;
         while(currentIndex < markdown.length()) {
-            if (markdown.indexOf("[", currentIndex) == -1 || markdown.indexOf("!", 
-                currentIndex) == markdown.indexOf("[", currentIndex)-1) {
+            if (markdown.indexOf("[", currentIndex) == -1) {
                 break;
+            }
+            if (markdown.indexOf("!", currentIndex) == markdown.indexOf("[", currentIndex)-1) {
+                currentIndex+=2;
+                continue;
             }
             int openBracket = markdown.indexOf("[", currentIndex);
             int closeBracket = markdown.indexOf("]", openBracket);
             int openParen = markdown.indexOf("(", closeBracket);
+            if (markdown.indexOf("https://", openParen) == -1) {
+                currentIndex++;
+                continue;
+            }
             int closeParen = markdown.indexOf(")", openParen);
             toReturn.add(markdown.substring(openParen + 1, closeParen));
             currentIndex = closeParen + 1;
