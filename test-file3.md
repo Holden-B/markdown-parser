@@ -1,5 +1,5 @@
 #Title
 
 [great](https://google.com)
-[good](https://youtube.com)
+[good](youtube.com)
 not good](butt.net)
