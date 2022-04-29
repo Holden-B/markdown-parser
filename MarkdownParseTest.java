@@ -17,7 +17,7 @@ public class MarkdownParseTest {
         Path fileName = Path.of("C:/Users/17142/Documents/GitHub/markdown-parser/test-file.md");
         String content = Files.readString(fileName);
         List<String> links = MarkdownParse.getLinks(content);
-        List<String> expected = List.of("https://something.net");
+        List<String> expected = List.of("https://something.com", "https://some-thing.com");
 
         assertEquals(expected, links);
     }
@@ -37,7 +37,7 @@ public class MarkdownParseTest {
         Path fileName = Path.of("C:/Users/17142/Documents/GitHub/markdown-parser/test-file3.md");
         String content = Files.readString(fileName);
         List<String> links = MarkdownParse.getLinks(content);
-        List<String> expected = List.of("https://google.com", "https://youtube.com");
+        List<String> expected = List.of("https://google.com");
 
         assertEquals(expected, links);
     }
