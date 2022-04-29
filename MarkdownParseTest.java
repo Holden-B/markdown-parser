@@ -24,7 +24,7 @@ public class MarkdownParseTest {
 
     @Test
     public void getlinks2() throws IOException {
-        Path fileName = Path.of("C:/Users/17142/Documents/GitHub/markdown-parser/test-file2.md");
+        Path fileName = Path.of("C:/Users/17142/Documents/GitHub/markdown-parser/test-file2old.md");
         String content = Files.readString(fileName);
         List<String> links = MarkdownParse.getLinks(content);
         List<String> expected = List.of("https://github.com", "https://youtube.com");
@@ -34,7 +34,7 @@ public class MarkdownParseTest {
 
     @Test
     public void getlinks3() throws IOException {
-        Path fileName = Path.of("C:/Users/17142/Documents/GitHub/markdown-parser/test-file3.md");
+        Path fileName = Path.of("C:/Users/17142/Documents/GitHub/markdown-parser/test-file3old.md");
         String content = Files.readString(fileName);
         List<String> links = MarkdownParse.getLinks(content);
         List<String> expected = List.of("https://google.com");
@@ -44,7 +44,7 @@ public class MarkdownParseTest {
 
     @Test
     public void getlinksnew2() throws IOException {
-        Path fileName = Path.of("C:/Users/17142/Documents/GitHub/markdown-parser/newtest/test-file2.md");
+        Path fileName = Path.of("C:/Users/17142/Documents/GitHub/markdown-parser/test-file2.md");
         String content = Files.readString(fileName);
         List<String> links = MarkdownParse.getLinks(content);
         List<String> expected = List.of("https://something.com");
@@ -54,7 +54,7 @@ public class MarkdownParseTest {
 
     @Test
     public void getlinksnew3() throws IOException {
-        Path fileName = Path.of("C:/Users/17142/Documents/GitHub/markdown-parser/newtest/test-file3.md");
+        Path fileName = Path.of("C:/Users/17142/Documents/GitHub/markdown-parser/test-file3.md");
         String content = Files.readString(fileName);
         List<String> links = MarkdownParse.getLinks(content);
         List<String> expected = List.of();
@@ -64,7 +64,7 @@ public class MarkdownParseTest {
 
     @Test
     public void getlinksnew4() throws IOException {
-        Path fileName = Path.of("C:/Users/17142/Documents/GitHub/markdown-parser/newtest/test-file4.md");
+        Path fileName = Path.of("C:/Users/17142/Documents/GitHub/markdown-parser/test-file4.md");
         String content = Files.readString(fileName);
         List<String> links = MarkdownParse.getLinks(content);
         List<String> expected = List.of();
@@ -74,7 +74,7 @@ public class MarkdownParseTest {
 
     @Test
     public void getlinksnew5() throws IOException {
-        Path fileName = Path.of("C:/Users/17142/Documents/GitHub/markdown-parser/newtest/test-file5.md");
+        Path fileName = Path.of("C:/Users/17142/Documents/GitHub/markdown-parser/test-file5.md");
         String content = Files.readString(fileName);
         List<String> links = MarkdownParse.getLinks(content);
         List<String> expected = List.of();
@@ -84,7 +84,7 @@ public class MarkdownParseTest {
 
     @Test
     public void getlinksnew6() throws IOException {
-        Path fileName = Path.of("C:/Users/17142/Documents/GitHub/markdown-parser/newtest/test-file6.md");
+        Path fileName = Path.of("C:/Users/17142/Documents/GitHub/markdown-parser/test-file6.md");
         String content = Files.readString(fileName);
         List<String> links = MarkdownParse.getLinks(content);
         List<String> expected = List.of();
@@ -94,7 +94,7 @@ public class MarkdownParseTest {
 
     @Test
     public void getlinksnew7() throws IOException {
-        Path fileName = Path.of("C:/Users/17142/Documents/GitHub/markdown-parser/newtest/test-file7.md");
+        Path fileName = Path.of("C:/Users/17142/Documents/GitHub/markdown-parser/test-file7.md");
         String content = Files.readString(fileName);
         List<String> links = MarkdownParse.getLinks(content);
         List<String> expected = List.of();
@@ -104,7 +104,7 @@ public class MarkdownParseTest {
 
     @Test
     public void getlinksnew8() throws IOException {
-        Path fileName = Path.of("C:/Users/17142/Documents/GitHub/markdown-parser/newtest/test-file8.md");
+        Path fileName = Path.of("C:/Users/17142/Documents/GitHub/markdown-parser/test-file8.md");
         String content = Files.readString(fileName);
         List<String> links = MarkdownParse.getLinks(content);
         List<String> expected = List.of();
