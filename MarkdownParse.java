@@ -15,7 +15,9 @@ public class MarkdownParse {
             if (markdown.indexOf("[", currentIndex) == -1) {
                 break;
             }
+            System.out.println(markdown.indexOf("!", currentIndex)+" "+(markdown.indexOf("[", currentIndex)-1));
             if (markdown.indexOf("!", currentIndex) == markdown.indexOf("[", currentIndex)-1) {
+                
                 currentIndex+=2;
                 continue;
             }
