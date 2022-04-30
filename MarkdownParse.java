@@ -20,9 +20,11 @@ public class MarkdownParse {
             //continue 
             //0
             if (markdown.indexOf("!", currentIndex) == markdown.indexOf("[", currentIndex)-1 && markdown.indexOf("!", currentIndex) != -1) {
-                
+                System.out.println(markdown.indexOf("!", currentIndex)+" "+(markdown.indexOf("[", currentIndex)-1));
                 currentIndex+=2;
                 continue;
+            } else {
+                System.out.println("skip");
             }
             int openBracket = markdown.indexOf("[", currentIndex);
             int closeBracket = markdown.indexOf("]", openBracket);
