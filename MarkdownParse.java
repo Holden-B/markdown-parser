@@ -19,14 +19,12 @@ public class MarkdownParse {
             //markdown.substring(openBracket-1,openBracket)=="!"
             //continue 
             //0
-            
-
-            int openBracket = markdown.indexOf("[", currentIndex);
-            if (markdown.substring(openBracket-1,openBracket)=="!") {
+            if (markdown.indexOf("!", currentIndex) == markdown.indexOf("[", currentIndex)-1 && markdown.indexOf("!", currentIndex) != -1) {
                 
                 currentIndex+=2;
                 continue;
             }
+            int openBracket = markdown.indexOf("[", currentIndex);
             int closeBracket = markdown.indexOf("]", openBracket);
             int openParen = markdown.indexOf("(", closeBracket);
             if (markdown.indexOf("https://", openParen) == -1) {
