@@ -28,7 +28,6 @@ public class MarkdownParseTest {
         String content = Files.readString(fileName);
         List<String> links = MarkdownParse.getLinks(content);
         List<String> expected = List.of("https://github.com", "https://youtube.com");
-
         assertEquals(expected, links);
     }
 
