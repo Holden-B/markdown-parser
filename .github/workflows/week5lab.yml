@@ -24,6 +24,12 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
+      
+      - name: debugging
+        run: |
+          cat test-file2old.md
+          javac MarkdownParse.java 
+          java MarkdownParse test-file2old.md
           
       # Runs test
       - name: run tests
@@ -33,8 +39,4 @@ jobs:
           javac -cp .:lib/junit-4.13.2.jar:lib/hamcrest-core-1.3.jar MarkdownParseTest.java
           java -cp .:lib/junit-4.13.2.jar:lib/hamcrest-core-1.3.jar org.junit.runner.JUnitCore MarkdownParseTest
           
-      - name: run tests
-        run: |
-          cat test-file2old.md
-          javac MarkdownParse.java 
-          java MarkdownParse test-file2old.md
+
