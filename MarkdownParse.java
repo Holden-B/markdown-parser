@@ -12,12 +12,14 @@ public class MarkdownParse {
         // find the next [, then find the ], then find the (, then read link upto next )
         int currentIndex = 0;
         while(currentIndex < markdown.length()) {
+            //check to see if open bracket exists, break if not
             if (markdown.indexOf("[", currentIndex) == -1) {
                 break;
             }
             
+            //check if ! and [ follow each other; skip 2 indices to avoid catching
+            //image link
             if (markdown.indexOf("!", currentIndex) == markdown.indexOf("[", currentIndex)-1 && markdown.indexOf("!", currentIndex) != -1) {
-                
                 currentIndex+=2;
                 continue;
             }
@@ -25,6 +27,9 @@ public class MarkdownParse {
             int openBracket = markdown.indexOf("[", currentIndex);
             int closeBracket = markdown.indexOf("]", openBracket);
             int openParen = markdown.indexOf("(", closeBracket);
+
+            //logic based specification: check if link is secured by checking
+            //for https://
             if (markdown.indexOf("https://", openParen) == -1) {
                 currentIndex++;
                 continue;
