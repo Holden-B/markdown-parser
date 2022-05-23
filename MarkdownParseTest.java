@@ -114,7 +114,7 @@ public class MarkdownParseTest {
 
     @Test
     public void getlinkssnip1() throws IOException {
-        Path fileName = Path.of("snip1.md");
+        Path fileName = Path.of("C:/Users/17142/Documents/GitHub/markdown-parser/snip1.md");
         String content = Files.readString(fileName);
         List<String> links = MarkdownParse.getLinks(content);
         List<String> expected = List.of("'google.com", "google.com", "ucsd.edu");
@@ -124,7 +124,7 @@ public class MarkdownParseTest {
 
     @Test
     public void getlinkssnip2() throws IOException {
-        Path fileName = Path.of("snip2.md");
+        Path fileName = Path.of("C:/Users/17142/Documents/GitHub/markdown-parser/snip2.md");
         String content = Files.readString(fileName);
         List<String> links = MarkdownParse.getLinks(content);
         List<String> expected = List.of("a.com", "a.com(())", "example.com");
@@ -134,7 +134,7 @@ public class MarkdownParseTest {
 
     @Test
     public void getlinkssnip3() throws IOException {
-        Path fileName = Path.of("snip3.md");
+        Path fileName = Path.of("C:/Users/17142/Documents/GitHub/markdown-parser/snip3.md");
         String content = Files.readString(fileName);
         List<String> links = MarkdownParse.getLinks(content);
         List<String> expected = List.of("https://sites.google.com/eng.ucsd.edu/cse-15l-spring-2022/schedule");
