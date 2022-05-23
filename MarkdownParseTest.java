@@ -111,4 +111,14 @@ public class MarkdownParseTest {
 
         assertEquals(expected, links);
     }
+
+    @Test
+    public void getlinkssnip1() throws IOException {
+        Path fileName = Path.of("snip1.md");
+        String content = Files.readString(fileName);
+        List<String> links = MarkdownParse.getLinks(content);
+        List<String> expected = List.of("google.com");
+
+        assertEquals(expected, links);
+    }
 }
